@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("application")
+    id("com.gradleup.shadow") version "9.6.1"
 }
 
 group = "org.csc494"
@@ -31,3 +32,10 @@ application {
 tasks.test {
     useJUnitPlatform()
 }
+
+tasks.shadowJar {
+    manifest {
+        attributes("Main-Class" to "com.csc494.JavaParserCLI.Main")
+    }
+}
+

@@ -26,7 +26,6 @@ import java.util.stream.Collectors;
  * between them.
  */
 public class Analyzer {
-
   private final List<ASGNode> nodes = new ArrayList<>();
   private final List<ASGEdge> edges = new ArrayList<>();
 
