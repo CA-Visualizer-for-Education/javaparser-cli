@@ -128,10 +128,10 @@ public class Analyzer {
     // MethodNode + HAS_METHOD, then CALLS / MUTATES_FIELD from its body
     for (MethodDeclaration method : type.getMethods()) {
       String methodFqn = methodFqn(method, ownerFqn);
-      String params = method.getParameters()
-                          .stream()
-                          .map(p -> resolveTypeName(p.getType()))
-                          .collect(Collectors.joining(","));
+      List<String> params = method.getParameters()
+                                .stream()
+                                .map(p -> resolveTypeName(p.getType()))
+                                .collect(Collectors.toList());
 
       nodes.add(new MethodNode(methodFqn, method.getNameAsString(),
                                resolveTypeName(method.getType()), params,
