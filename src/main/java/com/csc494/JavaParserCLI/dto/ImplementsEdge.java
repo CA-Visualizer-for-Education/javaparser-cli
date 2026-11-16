@@ -1,4 +1,7 @@
 package com.csc494.JavaParserCLI.dto;
 
-public record ImplementsEdge(String interfaceFqn, String implementingClassFqn)
+import java.util.List;
+
+public record ImplementsEdge(String interfaceFqn, String implementingClassFqn,
+                             List<MethodImplementation> methodImplementations)
     implements ASGEdge {}
